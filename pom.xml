@@ -7,19 +7,56 @@
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>apachegui-tomcatrealm</name>
-  <url>http://maven.apache.org</url>
+  <name>ApacheGUITomcat</name>
+  <url>http://apachegui.net</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jrossi227</id>
+      <name>Jonathan Rossi</name>
+      <email>jonathan.m.rossi@gmail.com</email>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>America/Toronto</timezone>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>ApacheGUIJdbc-mvn-repo</id>
+      <url>https://raw.githubusercontent.com/jrossi227/ApacheGUIJdbc/mvn-repo/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>net.apachegui</groupId>
+      <artifactId>apachegui-jdbc</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>catalina</artifactId>
+      <version>6.0.43</version>
     </dependency>
   </dependencies>
 </project>
