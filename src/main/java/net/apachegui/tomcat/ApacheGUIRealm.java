@@ -11,7 +11,7 @@ public class ApacheGUIRealm extends JDBCRealm
     @Override
     public SecurityConstraint[] findSecurityConstraints(Request request, Context context) {
         String enabled = SettingsDao.getInstance().getSetting("authenticationEnabled");
-        if(enabled != null && enabled.equals("false")) {
+        if(enabled == null || enabled.equals("no")) {
             return null;
         }
 
